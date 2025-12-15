@@ -24,6 +24,17 @@ Built as a portfolio project, it focuses on clean architecture, modern UI, and p
 
 ---
 
+## Project Purpose
+
+Promptora was built to explore:
+
+- Real-world AI chat workflows
+- Full-stack application design
+- Clean UI/UX for AI products
+- Production-ready project structure
+
+---
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome. Please open a discussion or submit a pull request.
