@@ -1,0 +1,34 @@
+import express from "express";
+import Thread from "../models/Thread.js";
+
+const router = express.Router();
+
+//test
+router.post("/test", async (req, res) => {
+  try {
+    const thread = new Thread({
+      threadId: "xyz",
+      title: "testing New Thread",
+    });
+
+    const response = await thread.save();
+    res.send(response);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Failed to save in DB" });
+  }
+});
+
+// Get all threads
+router.get("/thread",async(req,res) => {
+    try {
+        const threads = await Thread.find({}).sort({updatedAt: -1});
+        //descending order of updatedAt...most recent data on top
+        res.json(threads)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Failed to fetch threads" });
+    }
+})
+
+export default router;
