@@ -1,5 +1,6 @@
 import express from "express";
 import Thread from "../models/Thread.js";
+import getOpenAiApiResponse from "../utils/openai.js";
 
 const router = express.Router();
 
@@ -60,6 +61,39 @@ router.delete("/thread/:threadId", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Failed to delete thread" });
+  }
+});
+
+router.post("/chat", async (req, res) => {
+  const { threadId, message } = req.body;
+
+  if (!threadId || !message) {
+    return res.status(400).json({ error: "missing required fields" });
+  }
+  try {
+    let thread = await Thread.findOne({ threadId });
+
+    if (!thread) {
+      // Create a new thread in Db
+      thread = new Thread({
+        threadId,
+        title: message,
+        messages: [{ role: "user", content: message }],
+      });
+    } else {
+      thread.messages.push({ role: "user", content: message });
+    }
+
+    const assistantReply = await getOpenAiApiResponse(message);
+
+    thread.messages.push({ role: "assistant", content: assistantReply });
+    thread.updatedAt = new Date();
+
+    await thread.save();
+    res.json({ reply: assistantReply });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "something went wrong" });
   }
 });
 
