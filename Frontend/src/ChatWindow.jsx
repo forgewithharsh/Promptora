@@ -13,13 +13,14 @@ function ChatWindow() {
     currThreadId,
     prevChats,
     setPrevChats,
-    setNewChat
+    setNewChat,
   } = useContext(MyContext);
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const getReply = async () => {
     setLoading(true);
-    setNewChat(false)
+    setNewChat(false);
     const options = {
       method: "POST",
       headers: {
@@ -61,19 +62,41 @@ function ChatWindow() {
     setPrompt("");
   }, [reply]);
 
+  const handleProfileClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="chatWindow">
       <div className="navbar">
         <span>
           Promptora <i className="fa-solid fa-chevron-down"></i>
         </span>
-        <div className="userIconDiv">
+        <div className="userIconDiv" onClick={handleProfileClick}>
           <span className="userIcon">
             <i className="fa-solid fa-user"></i>
           </span>
         </div>
       </div>
-
+      {isOpen && (
+        <div className="dropDown">
+          <div className="dropDownItem">
+            <i class="fa-solid fa-face-smile"></i>&nbsp;forgewithharsh
+          </div>
+          <div className="dropDownItem">
+            <i class="fa-solid fa-cloud-arrow-up"></i>&nbsp;Upgrade plan
+          </div>
+          <div className="dropDownItem">
+            <i class="fa-solid fa-gear"></i>&nbsp;Settings
+          </div>
+          <div className="dropDownItem">
+            <i class="fa-brands fa-hire-a-helper"></i>&nbsp;Help
+          </div>
+          <div className="dropDownItem">
+            <i class="fa-solid fa-right-from-bracket"></i>&nbsp;Log out
+          </div>
+        </div>
+      )}
       <Chat></Chat>
 
       <ScaleLoader color="#fff" loading={loading}></ScaleLoader>
