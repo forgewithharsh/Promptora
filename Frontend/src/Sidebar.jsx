@@ -16,6 +16,22 @@ function Sidebar() {
     setPrevChats,
   } = useContext(MyContext);
 
+  const changeThread = async (newThreadId) => {
+    setCurrThreadId(newThreadId);
+
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/thread/${newThreadId}`
+      );
+      const res = await response.json();
+      setPrevChats(res);
+      setNewChat(false);
+      setReply(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const getAllThreads = async () => {
     try {
       const response = await fetch("http://localhost:8080/api/thread");
@@ -53,9 +69,10 @@ function Sidebar() {
 
       <ul className="history">
         {allThreads?.map((thread, idx) => (
-          <div>
-            <li key={idx}>{thread.title}</li>
-          </div>
+          <li key={idx} onClick={(e) => changeThread(thread.threadId)}>
+            {thread.title}
+            <i className="fa-solid fa-trash"></i>
+          </li>
         ))}
       </ul>
 
