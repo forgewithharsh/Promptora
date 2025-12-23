@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="file:///Users/harshguleria/Desktop/Screenshot%202025-12-23%20at%201.03.53%E2%80%AFPM.png" alt="Promptora Banner" width="800">
+  <img src="https://media.licdn.com/dms/image/v2/D5622AQH59XKR-WmvWw/feedshare-shrink_2048_1536/B56ZtA0EWzHkA0-/0/1766318952164?e=1767830400&v=beta&t=ESGPzlMwl1sYcCKha-OoHn6AIF6h7-TZAGe4ifPDnGk" alt="Promptora Banner" width="800">
 </p>
 
 # Promptora
