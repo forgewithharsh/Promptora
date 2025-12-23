@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="file:///Users/harshguleria/Desktop/Screenshot%202025-12-23%20at%201.03.53%E2%80%AFPM.png" alt="Promptora Banner" width="800">
+</p>
+
 # Promptora
 
 Promptora is a minimal, GPT-inspired AI assistant designed for clear, thoughtful, and prompt-driven conversations.  
