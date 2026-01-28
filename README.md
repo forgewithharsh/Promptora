@@ -21,7 +21,7 @@ Built as a portfolio project, it focuses on clean architecture, modern UI, and p
 
 ## Tech Stack
 
-- **Frontend:** React / Javascript  
+- **Frontend:** HTML CSS Javascript  
 - **Backend:** Node.js / Express  
 - **AI:** GPT-based API integration  
 - **Styling:** Tailwind CSS  
