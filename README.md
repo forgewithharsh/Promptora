@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D5622AQH59XKR-WmvWw/feedshare-shrink_2048_1536/B56ZtA0EWzHkA0-/0/1766318952164?e=1767830400&v=beta&t=ESGPzlMwl1sYcCKha-OoHn6AIF6h7-TZAGe4ifPDnGk" alt="Promptora Banner" width="800">
+  <img src="https://media.licdn.com/dms/image/v2/D5622AQH59XKR-WmvWw/feedshare-shrink_2048_1536/B56ZtA0EWzHkA0-/0/1766318952164?e=1771459200&v=beta&t=BsTRSR0PgauK7aIpAGN_gcJ0w5QA3RTfqGrrG5nxP0U" alt="Promptora Banner" width="800">
 </p>
 
 # Promptora
@@ -21,7 +21,7 @@ Built as a portfolio project, it focuses on clean architecture, modern UI, and p
 
 ## Tech Stack
 
-- **Frontend:** HTML CSS Javascript  
+- **Frontend:** HTML Javascript React
 - **Backend:** Node.js / Express  
 - **AI:** GPT-based API integration  
 - **Styling:** Tailwind CSS  
